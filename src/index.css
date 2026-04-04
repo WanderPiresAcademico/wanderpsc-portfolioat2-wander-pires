@@ -1,0 +1,90 @@
+:root {
+  --cor-primaria: #00d4ff;
+  --cor-secundaria: #7b2ff7;
+  --cor-acentuada: #ff2e63;
+  --bg-escuro: #0a0a1a;
+  --bg-card: rgba(255, 255, 255, 0.04);
+  --bg-card-hover: rgba(255, 255, 255, 0.08);
+  --texto-claro: #e0e0e0;
+  --texto-medio: #a0a0b0;
+  --borda-glass: rgba(255, 255, 255, 0.08);
+  --sombra: 0 8px 32px rgba(0, 0, 0, 0.4);
+  --fonte: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--fonte);
+  line-height: 1.7;
+  color: var(--texto-claro);
+  background-color: var(--bg-escuro);
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.secao__titulo {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  margin-bottom: 3rem;
+  position: relative;
+  color: #fff;
+}
+
+.secao__titulo::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  margin: 0.6rem auto 0;
+  border-radius: 2px;
+}
+
+.tag {
+  background: var(--bg-card);
+  border: 1px solid var(--borda-glass);
+  color: var(--cor-primaria);
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tag:hover {
+  background: rgba(0, 212, 255, 0.1);
+  border-color: var(--cor-primaria);
+}

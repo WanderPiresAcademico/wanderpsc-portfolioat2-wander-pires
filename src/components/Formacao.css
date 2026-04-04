@@ -1,0 +1,85 @@
+.formacao {
+  padding: 6rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.formacao__filtros {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+
+.filtro-btn {
+  padding: 0.5rem 1.3rem;
+  border-radius: 50px;
+  border: 1px solid var(--borda-glass);
+  background: var(--bg-card);
+  color: var(--texto-medio);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filtro-btn:hover,
+.filtro-btn.ativo {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  border-color: transparent;
+  color: #fff;
+}
+
+.formacao__lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.5rem;
+}
+
+.formacao-card {
+  background: var(--bg-card);
+  border: 1px solid var(--borda-glass);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+  backdrop-filter: blur(6px);
+}
+
+.formacao-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  border-color: rgba(0, 212, 255, 0.2);
+}
+
+.formacao-card__tipo {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  display: block;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.formacao-card__curso {
+  font-size: 1.05rem;
+  color: #fff;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.formacao-card__instituicao {
+  font-size: 0.9rem;
+  color: var(--texto-medio);
+}
+
+.formacao-card__detalhes {
+  font-size: 0.8rem;
+  color: var(--texto-medio);
+  margin-top: 0.5rem;
+  opacity: 0.7;
+}

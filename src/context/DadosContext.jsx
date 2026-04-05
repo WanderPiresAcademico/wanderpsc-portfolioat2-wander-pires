@@ -31,23 +31,26 @@ export function DadosProvider({ children }) {
         if (r.ok) { const j = await r.json(); base = { ...DEFAULTS, ...j }; }
       } catch (_) {}
 
-      const editMode = localStorage.getItem("portfolio_modo_edicao") === "true";
-      if (editMode) {
-        const saved = localStorage.getItem("portfolio_dados_all");
-        if (saved) try { base = { ...base, ...JSON.parse(saved) }; } catch (_) {}
-        setModoEdicao(true);
+      // Sempre restaurar dados salvos do localStorage (independente do modo edição)
+      const saved = localStorage.getItem("portfolio_dados_all");
+      if (saved) {
+        try { base = { ...base, ...JSON.parse(saved) }; } catch (_) {}
       }
+
+      const editMode = localStorage.getItem("portfolio_modo_edicao") === "true";
+      if (editMode) setModoEdicao(true);
+
       setDados(base);
       setCarregado(true);
     }
     carregar();
   }, []);
 
-  // ── Persiste no localStorage quando em modo edição ──
+  // ── Persiste no localStorage sempre que dados mudam ──
   useEffect(() => {
-    if (!carregado || !modoEdicao) return;
+    if (!carregado) return;
     localStorage.setItem("portfolio_dados_all", JSON.stringify(dados));
-  }, [dados, modoEdicao, carregado]);
+  }, [dados, carregado]);
 
   // ── Atalho Ctrl+Shift+E ──
   useEffect(() => {

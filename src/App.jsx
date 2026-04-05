@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { DadosProvider } from "./context/DadosContext";
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 import SobreMim from "./components/SobreMim";
 import DadosPessoais from "./components/DadosPessoais";
 import Formacao from "./components/Formacao";
@@ -14,6 +15,7 @@ function App() {
   return (
     <DadosProvider>
       <Header abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
+      <Hero />
       <main>
         {abaAtiva === "sobre" && <SobreMim />}
         {abaAtiva === "dados" && <DadosPessoais />}

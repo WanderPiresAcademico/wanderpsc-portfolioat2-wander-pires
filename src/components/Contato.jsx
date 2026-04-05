@@ -136,6 +136,10 @@ function Contato() {
           💻 Ver Códigos-Fonte
         </button>
 
+        <a href="/entrega-atividade2.html" target="_blank" rel="noopener noreferrer" className="contato__btn-codigos" style={{ textDecoration: 'none', marginTop: '0.5rem' }}>
+          📄 PDF — Entrega Atividade 2
+        </a>
+
         {mostrarCodigos && (
           <div className="codigos-overlay" onClick={() => setMostrarCodigos(false)}>
             <div className="codigos-modal" onClick={(e) => e.stopPropagation()}>

@@ -318,6 +318,7 @@
   ],
   "dadosPessoais": {
     "nome": "Wander Pires Silva Coelho",
+    "nascimento": "20 de maio de 1979",
     "naturalidade": "São Paulo - SP",
     "endereco": "Av. Valdecir Rodrigues de Albuquerque",
     "cidade": "Curimatá",
@@ -329,6 +330,7 @@
   },
   "camposLabels": {
     "nome": "Nome Completo",
+    "nascimento": "Data de Nascimento",
     "naturalidade": "Naturalidade",
     "endereco": "Endereço",
     "cidade": "Cidade",
@@ -339,7 +341,7 @@
     "cargo": "Cargo Atual"
   },
   "sobreParagrafos": [
-    "Olá! Meu nome é <strong>Wander Pires Silva Coelho</strong>, nasci em <strong> São Paulo - SP</strong>. Sou educador, naturopata e estudante de programação web. Atuo como Diretor Escolar do CETI Desembargador Amaral em Curimatá-PI desde 2010 e sou professor efetivo das redes municipal e estadual de educação do Piauí.",
+    "Olá! Meu nome é <strong>Wander Pires Silva Coelho</strong>, nasci em <strong>20 de maio de 1979</strong>, natural de <strong>São Paulo - SP</strong>. Sou educador, naturopata e estudante de programação web. Atuo como Diretor Escolar do CETI Desembargador Amaral em Curimatá-PI desde 2010 e sou professor efetivo das redes municipal e estadual de educação do Piauí.",
     "Este portfólio foi construído com <strong>React</strong>, demonstrando componentização, renderização dinâmica de dados e boas práticas de desenvolvimento web moderno."
   ],
   "habilidades": [

@@ -28,6 +28,106 @@
   opacity: 0.6; margin-top: 2rem;
 }
 
+/* Botão Ver Códigos */
+.contato__btn-codigos {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin: 1.5rem auto 0; padding: 0.7rem 1.8rem;
+  border-radius: 50px; border: 1px solid var(--borda-glass);
+  background: var(--bg-card); color: var(--cor-primaria);
+  font-size: 0.95rem; font-weight: 600; cursor: pointer;
+  transition: all 0.3s; backdrop-filter: blur(8px);
+}
+.contato__btn-codigos:hover {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  border-color: transparent; color: #fff;
+}
+
+/* Modal de códigos */
+.codigos-overlay {
+  position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,0.8); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+.codigos-modal {
+  width: 95vw; max-width: 1200px; height: 85vh;
+  background: #0d0d24; border: 1px solid var(--borda-glass);
+  border-radius: 16px; display: flex; flex-direction: column;
+  overflow: hidden; box-shadow: 0 0 60px rgba(0,212,255,0.15);
+}
+.codigos-modal__header {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 1.5rem; border-bottom: 1px solid var(--borda-glass);
+  background: rgba(255,255,255,0.03);
+}
+.codigos-modal__header h3 {
+  font-size: 1.1rem; color: var(--texto-claro); margin: 0;
+}
+.codigos-modal__fechar {
+  background: none; border: none; color: var(--texto-medio);
+  font-size: 1.3rem; cursor: pointer; padding: 0.3rem 0.5rem;
+  border-radius: 6px; transition: all 0.2s;
+}
+.codigos-modal__fechar:hover { color: #ff5555; background: rgba(255,85,85,0.1); }
+.codigos-modal__body {
+  display: flex; flex: 1; overflow: hidden;
+}
+.codigos-modal__sidebar {
+  width: 220px; min-width: 180px; overflow-y: auto;
+  border-right: 1px solid var(--borda-glass);
+  background: rgba(0,0,0,0.2); padding: 0.5rem 0;
+}
+.codigos-modal__arq {
+  display: flex; align-items: center; gap: 0.5rem;
+  width: 100%; padding: 0.5rem 1rem; border: none;
+  background: transparent; color: var(--texto-medio);
+  font-size: 0.8rem; text-align: left; cursor: pointer;
+  transition: all 0.2s; font-family: 'Consolas', monospace;
+}
+.codigos-modal__arq:hover { background: rgba(255,255,255,0.05); color: var(--texto-claro); }
+.codigos-modal__arq--ativo {
+  background: rgba(0,212,255,0.1); color: var(--cor-primaria);
+  border-left: 2px solid var(--cor-primaria);
+}
+.codigos-modal__ext {
+  font-size: 0.6rem; padding: 1px 5px; border-radius: 4px;
+  text-transform: uppercase; font-weight: 700; letter-spacing: 0.5px;
+  min-width: 28px; text-align: center;
+}
+.codigos-modal__ext--jsx { background: rgba(97,218,251,0.2); color: #61dafb; }
+.codigos-modal__ext--js { background: rgba(241,224,90,0.2); color: #f1e05a; }
+.codigos-modal__ext--css { background: rgba(86,61,124,0.3); color: #c678dd; }
+.codigos-modal__ext--html { background: rgba(227,76,38,0.2); color: #e34c26; }
+.codigos-modal__ext--json { background: rgba(64,180,99,0.2); color: #40b463; }
+.codigos-modal__codigo {
+  flex: 1; overflow: auto; display: flex; flex-direction: column;
+}
+.codigos-modal__nome-arq {
+  padding: 0.5rem 1rem; font-size: 0.75rem; font-family: 'Consolas', monospace;
+  color: var(--texto-medio); background: rgba(255,255,255,0.03);
+  border-bottom: 1px solid var(--borda-glass);
+}
+.codigos-modal__pre {
+  flex: 1; margin: 0; padding: 1rem; overflow: auto;
+  font-size: 0.82rem; line-height: 1.6; font-family: 'Consolas', 'Courier New', monospace;
+  color: #abb2bf; tab-size: 2; white-space: pre;
+}
+.codigos-modal__loading {
+  padding: 2rem; color: var(--cor-primaria); text-align: center; font-size: 1rem;
+}
+
+@media (max-width: 700px) {
+  .codigos-modal { width: 98vw; height: 92vh; border-radius: 10px; }
+  .codigos-modal__body { flex-direction: column; }
+  .codigos-modal__sidebar {
+    width: 100%; min-width: unset; max-height: 130px;
+    border-right: none; border-bottom: 1px solid var(--borda-glass);
+    display: flex; flex-wrap: wrap; padding: 0.3rem;
+  }
+  .codigos-modal__arq { width: auto; padding: 0.3rem 0.6rem; font-size: 0.7rem; }
+  .codigos-modal__arq--ativo { border-left: none; border-bottom: 2px solid var(--cor-primaria); }
+}
+
 @media (max-width: 600px) {
   .contato__lista { flex-direction: column; align-items: center; }
 }

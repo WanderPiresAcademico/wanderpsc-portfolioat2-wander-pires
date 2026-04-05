@@ -1,64 +1,71 @@
-.sobre {
-  padding: 6rem 0;
-  position: relative;
-  z-index: 1;
-}
-
+.sobre { padding: 6rem 0; position: relative; z-index: 1; }
 .sobre__conteudo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3rem;
-  background: var(--bg-card);
-  border: 1px solid var(--borda-glass);
-  border-radius: 20px;
-  padding: 3rem;
-  backdrop-filter: blur(8px);
+  display: flex; flex-direction: column; align-items: center; gap: 3rem;
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  border-radius: 20px; padding: 3rem; backdrop-filter: blur(8px);
 }
-
 .sobre__foto-wrapper {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-shrink: 0; display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
 }
-
 .sobre__foto {
-  width: 250px;
-  height: 250px;
-  border-radius: 50%;
-  overflow: hidden;
+  position: relative; width: 250px; height: 250px; border-radius: 50%;
+  overflow: hidden; cursor: pointer;
   border: 3px solid transparent;
   background-image: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-  background-origin: border-box;
-  background-clip: content-box, border-box;
+  background-origin: border-box; background-clip: content-box, border-box;
   box-shadow: 0 0 30px rgba(0, 212, 255, 0.2);
 }
-
-.sobre__foto-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.sobre__foto-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
+.sobre__foto-overlay {
+  position: absolute; inset: 0; border-radius: 50%;
+  background-color: rgba(10, 10, 26, 0.75);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.3s; pointer-events: none;
 }
-
-.sobre__texto {
-  text-align: center;
+.sobre__foto:hover .sobre__foto-overlay { opacity: 1; }
+.sobre__foto-overlay span { color: #fff; font-size: 0.85rem; font-weight: 600; }
+.sobre__foto-zoom {
+  display: flex; align-items: center; gap: 0.5rem;
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  border-radius: 50px; padding: 0.4rem 1rem;
+  font-size: 0.8rem; color: var(--texto-medio);
 }
-
-.sobre__texto p {
-  margin-bottom: 1rem;
-  font-size: 1.05rem;
-  color: var(--texto-medio);
+.sobre__foto-zoom input[type="range"] {
+  width: 100px; accent-color: var(--cor-primaria); cursor: pointer;
 }
-
-.sobre__texto strong {
-  color: #fff;
+.sobre__foto-zoom span { color: var(--cor-primaria); font-weight: 700; min-width: 2.5rem; text-align: center; }
+.sobre__texto { text-align: center; }
+.sobre__texto p { margin-bottom: 1rem; font-size: 1.05rem; color: var(--texto-medio); }
+.sobre__texto strong { color: #fff; }
+.sobre__paragrafo-wrapper { position: relative; }
+.sobre__inline-btns {
+  display: flex; gap: 0.3rem; justify-content: center; margin-bottom: 0.5rem;
 }
-
+.sobre__inline-btns button {
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  color: var(--texto-medio); border-radius: 6px; padding: 0.2rem 0.5rem;
+  cursor: pointer; font-size: 0.75rem; transition: border-color 0.2s;
+}
+.sobre__inline-btns button:hover { border-color: var(--cor-primaria); }
 .sobre__habilidades {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1.2rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 1.2rem;
+}
+.tag__remover {
+  background: none; border: none; color: var(--cor-acentuada);
+  margin-left: 0.3rem; cursor: pointer; font-weight: 700; font-size: 0.9rem;
+}
+.tag--add {
+  cursor: pointer; border-style: dashed; color: var(--texto-medio);
+}
+.tag--add:hover { border-color: var(--cor-primaria); color: var(--cor-primaria); }
+.btn-add-inline {
+  background: none; border: 1px dashed var(--borda-glass); color: var(--texto-medio);
+  padding: 0.4rem 1.2rem; border-radius: 8px; cursor: pointer;
+  font-size: 0.85rem; transition: all 0.2s; margin-top: 0.5rem;
+}
+.btn-add-inline:hover { border-color: var(--cor-primaria); color: var(--cor-primaria); }
+
+@media (max-width: 600px) {
+  .sobre__conteudo { padding: 1.5rem; }
+  .sobre__foto { width: 180px; height: 180px; }
 }

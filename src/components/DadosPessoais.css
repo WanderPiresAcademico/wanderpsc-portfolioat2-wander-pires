@@ -1,0 +1,58 @@
+.dados { padding: 6rem 0; position: relative; z-index: 1; }
+.dados__card {
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  border-radius: 20px; padding: 2.5rem; backdrop-filter: blur(8px); position: relative;
+}
+.dados__btn-editar {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  padding: 0.5rem 1.3rem; border-radius: 50px;
+  border: 1px solid var(--borda-glass); background: var(--bg-card);
+  color: var(--cor-primaria); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
+}
+.dados__btn-editar:hover {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  border-color: transparent; color: #fff;
+}
+.dados__btn-group {
+  position: absolute; top: 1.5rem; right: 1.5rem;
+  display: flex; gap: 0.5rem;
+}
+.dados__btn-salvar {
+  padding: 0.5rem 1.3rem; border-radius: 50px; border: none;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #fff; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+}
+.dados__btn-cancelar {
+  padding: 0.5rem 1.3rem; border-radius: 50px;
+  border: 1px solid var(--borda-glass); background: var(--bg-card);
+  color: var(--texto-medio); font-size: 0.85rem; cursor: pointer;
+}
+.dados__grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;
+}
+.dados__item { display: flex; flex-direction: column; gap: 0.3rem; }
+.dados__label {
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px; font-weight: 700;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.dados__valor {
+  font-size: 1rem; color: var(--texto-claro); padding: 0.5rem 0;
+  border-bottom: 1px solid transparent; min-height: 2.2rem;
+}
+.dados__valor--vazio { color: var(--texto-medio); opacity: 0.5; font-style: italic; }
+.dados__input {
+  font-size: 1rem; color: #fff;
+  background: rgba(255, 255, 255, 0.05); border: 1px solid var(--borda-glass);
+  border-radius: 8px; padding: 0.55rem 0.8rem; font-family: inherit;
+  transition: border-color 0.3s;
+}
+.dados__input:focus { outline: none; border-color: var(--cor-primaria); }
+
+@media (max-width: 600px) {
+  .dados__card { padding: 1.5rem; }
+  .dados__grid { grid-template-columns: 1fr; }
+  .dados__btn-editar,
+  .dados__btn-group { position: static; margin-bottom: 1rem; }
+}

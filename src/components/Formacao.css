@@ -1,85 +1,64 @@
-.formacao {
-  padding: 6rem 0;
-  position: relative;
-  z-index: 1;
-}
-
+.formacao { padding: 6rem 0; position: relative; z-index: 1; }
 .formacao__filtros {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.6rem;
-  margin-bottom: 2.5rem;
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; margin-bottom: 2.5rem;
 }
-
 .filtro-btn {
-  padding: 0.5rem 1.3rem;
-  border-radius: 50px;
-  border: 1px solid var(--borda-glass);
-  background: var(--bg-card);
-  color: var(--texto-medio);
-  font-size: 0.85rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s;
+  padding: 0.5rem 1.3rem; border-radius: 50px;
+  border: 1px solid var(--borda-glass); background: var(--bg-card);
+  color: var(--texto-medio); font-size: 0.85rem; font-weight: 600;
+  cursor: pointer; transition: all 0.3s;
 }
-
-.filtro-btn:hover,
-.filtro-btn.ativo {
+.filtro-btn:hover, .filtro-btn.ativo {
   background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-  border-color: transparent;
-  color: #fff;
+  border-color: transparent; color: #fff;
 }
-
 .formacao__lista {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
-  gap: 1.5rem;
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-bottom: 2rem;
 }
-
 .formacao-card {
-  background: var(--bg-card);
-  border: 1px solid var(--borda-glass);
-  border-radius: 16px;
-  padding: 1.5rem;
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  border-radius: 16px; padding: 1.5rem; position: relative;
   transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
   backdrop-filter: blur(6px);
 }
-
 .formacao-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transform: translateY(-4px); box-shadow: var(--sombra);
   border-color: rgba(0, 212, 255, 0.2);
 }
-
+.formacao-card__acoes {
+  position: absolute; top: 0.8rem; right: 0.8rem; display: flex; gap: 0.3rem;
+}
+.formacao-card__acoes button {
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  color: var(--texto-medio); border-radius: 6px; padding: 0.25rem 0.5rem;
+  cursor: pointer; font-size: 0.75rem; transition: border-color 0.2s;
+}
+.formacao-card__acoes button:hover { border-color: var(--cor-primaria); }
 .formacao-card__tipo {
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  font-weight: 700;
-  margin-bottom: 0.4rem;
-  display: block;
+  font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1.5px;
+  font-weight: 700; margin-bottom: 0.4rem; display: block;
   background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
 }
+.formacao-card__curso { font-size: 1.05rem; color: #fff; margin-bottom: 0.4rem; font-weight: 600; }
+.formacao-card__instituicao { font-size: 0.9rem; color: var(--texto-medio); }
+.formacao-card__detalhes { font-size: 0.8rem; color: var(--texto-medio); margin-top: 0.5rem; opacity: 0.7; }
 
-.formacao-card__curso {
-  font-size: 1.05rem;
-  color: #fff;
-  margin-bottom: 0.4rem;
-  font-weight: 600;
+.btn-add-secao {
+  display: flex; align-items: center; gap: 0.5rem;
+  margin: 1rem auto 0; padding: 0.6rem 1.8rem;
+  background: var(--bg-card); border: 1px dashed var(--borda-glass);
+  color: var(--cor-primaria); border-radius: 50px;
+  font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s;
 }
-
-.formacao-card__instituicao {
-  font-size: 0.9rem;
-  color: var(--texto-medio);
+.btn-add-secao:hover {
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  border-style: solid; border-color: transparent; color: #fff;
 }
+.btn-add-secao span { font-size: 1.2rem; font-weight: 700; }
 
-.formacao-card__detalhes {
-  font-size: 0.8rem;
-  color: var(--texto-medio);
-  margin-top: 0.5rem;
-  opacity: 0.7;
+@media (max-width: 600px) {
+  .formacao__lista { grid-template-columns: 1fr; }
+  .formacao__filtros { gap: 0.4rem; }
+  .filtro-btn { padding: 0.4rem 0.8rem; font-size: 0.75rem; }
 }

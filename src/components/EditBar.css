@@ -1,0 +1,43 @@
+.edit-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  background: linear-gradient(135deg, rgba(123, 47, 247, 0.95), rgba(0, 212, 255, 0.95));
+  backdrop-filter: blur(12px);
+  padding: 0.7rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.4);
+}
+.edit-bar__label {
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+.edit-bar__btn {
+  padding: 0.5rem 1.5rem;
+  background: #fff;
+  color: #0a0a1a;
+  border: none;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.edit-bar__btn:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 480px) {
+  .edit-bar {
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+  }
+}

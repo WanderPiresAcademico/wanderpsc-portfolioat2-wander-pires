@@ -1,0 +1,33 @@
+.contato {
+  padding: 4rem 0 2rem; position: relative; z-index: 1;
+  border-top: 1px solid var(--borda-glass);
+}
+.contato__lista {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.contato__item-wrapper {
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.contato__item {
+  color: var(--texto-medio); font-size: 1rem; text-decoration: none;
+  transition: color 0.3s; padding: 0.6rem 1.2rem;
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  border-radius: 12px;
+}
+.contato__item:hover { color: var(--cor-primaria); border-color: var(--cor-primaria); }
+.contato__btns { display: flex; gap: 0.2rem; }
+.contato__btns button {
+  background: var(--bg-card); border: 1px solid var(--borda-glass);
+  color: var(--texto-medio); border-radius: 6px; padding: 0.2rem 0.4rem;
+  cursor: pointer; font-size: 0.7rem; transition: border-color 0.2s;
+}
+.contato__btns button:hover { border-color: var(--cor-primaria); }
+.contato__copy {
+  text-align: center; font-size: 0.85rem; color: var(--texto-medio);
+  opacity: 0.6; margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  .contato__lista { flex-direction: column; align-items: center; }
+}

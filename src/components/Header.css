@@ -34,6 +34,10 @@
 .header__tab-btn.aba-ativa { color: #fff; }
 .header__tab-btn.aba-ativa::after { width: 100%; }
 
+@media (max-width: 480px) {
+  .header__logo { font-size: 1.2rem; }
+}
+
 .header__menu-btn {
   display: none; flex-direction: column; gap: 5px;
   background: none; border: none; cursor: pointer; padding: 4px;

@@ -33,6 +33,11 @@
   transition: color 0.2s;
 }
 .modal__fechar:hover { color: var(--cor-acentuada); }
+
+@media (max-width: 480px) {
+  .modal { padding: 1.5rem 1rem; border-radius: 14px; }
+  .modal__titulo { font-size: 1.1rem; }
+}
 .modal__titulo {
   font-size: 1.3rem;
   margin-bottom: 1.5rem;

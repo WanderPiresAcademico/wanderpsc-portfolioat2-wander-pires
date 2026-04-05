@@ -126,6 +126,8 @@
   }
   .codigos-modal__arq { width: auto; padding: 0.3rem 0.6rem; font-size: 0.7rem; }
   .codigos-modal__arq--ativo { border-left: none; border-bottom: 2px solid var(--cor-primaria); }
+  .codigos-modal__sidebar { overflow-y: auto; }
+  .contato__lista { flex-direction: column; align-items: center; }
 }
 
 @media (max-width: 600px) {

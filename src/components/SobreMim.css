@@ -66,6 +66,6 @@
 .btn-add-inline:hover { border-color: var(--cor-primaria); color: var(--cor-primaria); }
 
 @media (max-width: 600px) {
-  .sobre__conteudo { padding: 1.5rem; }
+  .sobre__conteudo { padding: 1.5rem; gap: 1.5rem; }
   .sobre__foto { width: 180px; height: 180px; }
 }

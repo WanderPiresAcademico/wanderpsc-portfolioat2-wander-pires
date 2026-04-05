@@ -62,5 +62,9 @@ main > * {
 }
 
 @media (max-width: 480px) {
-  html { font-size: 14px; }
+  .secao__titulo { font-size: 1.4rem; }
+  main { padding-top: 3.5rem; }
 }
+
+/* Impedir auto-zoom iOS em inputs */
+input, textarea, select { font-size: 16px !important; }

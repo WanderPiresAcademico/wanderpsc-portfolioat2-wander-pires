@@ -1,14 +1,323 @@
 {
-  "fotoUrl": "/img/Wander.jpeg",
-  "fotoZoom": 1,
-  "sobreParagrafos": [
-    "Olá! Meu nome é <strong>Wander Pires Silva Coelho</strong>, nasci em <strong>20 de maio de 1979</strong>, natural de <strong>São Paulo - SP</strong>. Sou educador, naturopata e estudante de programação web. Atuo como Diretor Escolar do CETI Desembargador Amaral em Curimatá-PI desde 2010 e sou professor efetivo das redes municipal e estadual de educação do Piauí.",
-    "Este portfólio foi construído com <strong>React</strong>, demonstrando componentização, renderização dinâmica de dados e boas práticas de desenvolvimento web moderno."
+  "projetos": [
+    {
+      "titulo": "Portfólio Pessoal",
+      "descricao": "Meu portfólio profissional com HTML5, CSS3 e JavaScript puro — layout responsivo, partículas animadas e renderização dinâmica.",
+      "tecnologias": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "link": "#",
+      "emoji": "🌐",
+      "imgZoom": 1
+    },
+    {
+      "titulo": "Gerenciador de Bibliotecas",
+      "descricao": "Controle Escolar Inteligente - Gerenciamento de Biblioteca",
+      "tecnologias": [
+        "React 19",
+        "Material UI",
+        "Supabase",
+        "Express.js",
+        "Node.js"
+      ],
+      "link": "https://cei-sistema-biblioteca.surge.sh",
+      "emoji": "img/projeto-1.jpg",
+      "imgZoom": 0.3
+    },
+    {
+      "titulo": "EduSync-PRO",
+      "descricao": "Sistema Criador de Horário de Aula Escolar profissional, com gerador de horário emergencial, frequência de professores, calendário escolar e painel eletrônico.",
+      "tecnologias": [
+        "React 19",
+        "Material UI",
+        "Supabase",
+        "Express.js",
+        "Node.js"
+      ],
+      "link": "https://criador-horario-aula.surge.sh/#/login",
+      "emoji": "img/projeto-2.jpg",
+      "imgZoom": 0.3
+    },
+    {
+      "titulo": "Anamnese Integrativa",
+      "descricao": "Sistema completo de apoio ao terapeuta com indicações suplementares e fitoterápicas, acompanhamento em anamnese e tratamentos terapêuticos.",
+      "tecnologias": [
+        "React 19",
+        "Material UI",
+        "Supabase",
+        "Express.js",
+        "Node.js"
+      ],
+      "link": "https://anamneseintegrativa.surge.sh/",
+      "emoji": "img/projeto-3.jpg",
+      "imgZoom": 0.3
+    },
+    {
+      "titulo": "Gerador de Certificados",
+      "descricao": "Facilitador para gestão escolar que gera certificados editáveis em massa, acompanhado pelo Histórico Escolar do Estudante.",
+      "tecnologias": [
+        "React 19",
+        "Material UI",
+        "Supabase",
+        "Express.js",
+        "Node.js"
+      ],
+      "link": "https://gerador-certificados.surge.sh/login.html",
+      "emoji": "img/projeto-4.jpg",
+      "imgZoom": 0.3
+    }
   ],
-  "habilidades": ["HTML5", "CSS3", "JavaScript", "React", "Node.js", "Supabase", "Material UI", "Git & GitHub"],
+  "formacoes": [
+    {
+      "tipo": "Ensino Médio",
+      "instituicao": "Escola Estadual Dr. \"Mariano da Rocha\"",
+      "curso": "Ensino Médio Completo",
+      "local": "Teixeiras - MG",
+      "periodo": "Concluído"
+    },
+    {
+      "tipo": "Graduação",
+      "instituicao": "Universidade Estadual do Piauí – UESPI",
+      "curso": "Licenciatura Plena em Letras / Inglês",
+      "local": "Teresina - PI",
+      "periodo": "Jan/2001 a Dez/2004 · 2.220 h/a"
+    },
+    {
+      "tipo": "Experiência Profissional",
+      "instituicao": "Rede Municipal de Educação de Curimatá - PI",
+      "curso": "Professor Efetivo",
+      "local": "Curimatá - PI",
+      "periodo": "Desde Fev/2006"
+    },
+    {
+      "tipo": "Experiência Profissional",
+      "instituicao": "Rede Estadual de Educação do Estado do Piauí",
+      "curso": "Professor Efetivo",
+      "local": "Piauí",
+      "periodo": "Desde Fev/2006"
+    },
+    {
+      "tipo": "Pós-Graduação",
+      "instituicao": "Instituto Superior de Teologia Aplicada",
+      "curso": "Especialização em Metodologia do Ensino Língua Inglesa",
+      "local": "Sobral - CE",
+      "periodo": "Jan/2007 a Jul/2008 · 360 h/a"
+    },
+    {
+      "tipo": "Pós-Graduação",
+      "instituicao": "Universidade Estadual do Piauí – UESPI",
+      "curso": "Especialização em Educação: Pedagogia do Ensino Fundamental e Médio",
+      "local": "Teresina - PI",
+      "periodo": "Jan/2007 a Fev/2008 · 400 h/a"
+    },
+    {
+      "tipo": "Pós-Graduação",
+      "instituicao": "Faculdade Latino-Americana de Educação – FLATED",
+      "curso": "Especialização em Gestão Escolar com Habilitação em Supervisão Escolar",
+      "local": "Fortaleza - CE",
+      "periodo": "Mar/2009 a Jul/2010 · 390 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Portal Educação",
+      "curso": "Gestão Escolar",
+      "local": "São Paulo - SP",
+      "periodo": "Jan/2010 · 60 h/a"
+    },
+    {
+      "tipo": "Experiência Profissional",
+      "instituicao": "CETI Desembargador Amaral",
+      "curso": "Diretor Escolar",
+      "local": "Curimatá - PI",
+      "periodo": "Desde Jan/2010"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Universidade de Brasília",
+      "curso": "Prevenção do Uso de Drogas para Educadores de Escolas Públicas",
+      "local": "Brasília - DF",
+      "periodo": "Ago/2012 a Abr/2013 · 180 h/a"
+    },
+    {
+      "tipo": "Curso Técnico",
+      "instituicao": "SAM Cursos, Treinamento, Serviços e Comércio",
+      "curso": "Eletricista de Rede, Alta e Baixa Tensão",
+      "local": "Curimatá - PI",
+      "periodo": "Abr/2016 a Mai/2016 · 120 h/a"
+    },
+    {
+      "tipo": "Curso Técnico",
+      "instituicao": "SAM Cursos, Treinamento, Serviços e Comércio",
+      "curso": "NR10 – Complementar - SEP",
+      "local": "Curimatá - PI",
+      "periodo": "Mai/2016 · 40 h/a"
+    },
+    {
+      "tipo": "Curso Técnico",
+      "instituicao": "SAM Cursos, Treinamento, Serviços e Comércio",
+      "curso": "NR35 – Trabalho em Altura",
+      "local": "Curimatá - PI",
+      "periodo": "Mai/2016 · 8 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Portal Educação",
+      "curso": "Introdução à Rede de Computadores",
+      "local": "São Paulo - SP",
+      "periodo": "2016 · 80 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Portal Educação",
+      "curso": "Educação Infantil",
+      "local": "São Paulo - SP",
+      "periodo": "Abr/2016 a Jun/2016 · 60 h/a"
+    },
+    {
+      "tipo": "Graduação",
+      "instituicao": "Universidade Estadual do Piauí – UESPI",
+      "curso": "Licenciatura Plena em Pedagogia",
+      "local": "Teresina - PI",
+      "periodo": "2018 · 1.455 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "SEDUC – 15ª GRE",
+      "curso": "A Lei Maria da Penha nas Escolas: Desconstruindo a Violência",
+      "local": "Corrente - PI",
+      "periodo": "Ago/2018 · 10 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Secretaria da Educação e Cultura do Piauí – SEDUC",
+      "curso": "Formação de Gestores Escolares",
+      "local": "Teresina - PI",
+      "periodo": "Out/2023 · 40 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Instituto Viva Melhor",
+      "curso": "Naturopatia Integrativa e Iridologia",
+      "local": "Campinas - SP",
+      "periodo": "Fev/2024 a Jun/2024 · 600 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "ABRATH",
+      "curso": "Congresso Luso-brasileiro de Práticas Naturais e Integrativas",
+      "local": "Fortaleza - CE",
+      "periodo": "2024 · 48 h/a"
+    },
+    {
+      "tipo": "Pós-Graduação",
+      "instituicao": "UniBF – Centro Universitário",
+      "curso": "Naturopatia com Ênfase em Medicina Integrativa (Lato Sensu)",
+      "local": "Paraíso do Norte - PR",
+      "periodo": "Jun/2024 a Out/2025 · 1.240 h/a"
+    },
+    {
+      "tipo": "Pós-Graduação",
+      "instituicao": "Instituto Viva Melhor",
+      "curso": "Naturopatia Integrativa e Iridologia",
+      "local": "Campinas - SP",
+      "periodo": "Jun/2024 a Jul/2025 · 1.240 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Universidade Online de Viçosa",
+      "curso": "Capacitação de Manipulador de Medicamentos",
+      "local": "Viçosa - MG",
+      "periodo": "Jun/2024 · 60 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Faculdade UNIFTB - VENES",
+      "curso": "Farmacologia Clínica e Terapêutica e Boas Práticas de Prescrição",
+      "local": "Juazeiro do Norte - CE",
+      "periodo": "Out/2024 a Nov/2024 · 40 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Faculdade UNIFTB - VENES",
+      "curso": "Noções de Primeiros Socorros",
+      "local": "Juazeiro do Norte - CE",
+      "periodo": "Out/2024 a Nov/2024 · 180 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Faculdade UNIFTB - VENES",
+      "curso": "Farmacoterapia e Atenção Farmacêutica",
+      "local": "Juazeiro do Norte - CE",
+      "periodo": "Out/2024 a Nov/2024 · 180 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Instituto Emmanoel Fernandes (IEF)",
+      "curso": "Biorressonância Magnética na Prática",
+      "local": "Florianópolis - SC",
+      "periodo": "Out/2024 · 30 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Instituto Emmanoel Fernandes (IEF)",
+      "curso": "Soroterapia Ortomolecular",
+      "local": "Florianópolis - SC",
+      "periodo": "Out/2024 · 30 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Go Kursos – Inovações Educacionais LTDA",
+      "curso": "Conexão EAD: Nivelamento em Português",
+      "local": "",
+      "periodo": "Jan/2025 · 10 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Projeto Plátano - UNIQUANTI",
+      "curso": "Atualização em Iridologia Moderna com John Andrews",
+      "local": "Inglaterra",
+      "periodo": "Abr/2025 · 20 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "ABRATH",
+      "curso": "Formação em Fitoterapia e Plantas Medicinais – Terapeuta em Fitoterapia Integrativa",
+      "local": "Fortaleza - CE",
+      "periodo": "2025 · 600 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Fraternidade Farmacêutica",
+      "curso": "Formação em Farmácia Integrativa",
+      "local": "Igarapé - MG",
+      "periodo": "2025 · 100 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Fundação Getúlio Vargas - FGV",
+      "curso": "Gestão Escolar na Prática: Dimensão Político-Institucional",
+      "local": "Rio de Janeiro - RJ",
+      "periodo": "2025 · 48 h/a"
+    },
+    {
+      "tipo": "Curso Livre",
+      "instituicao": "Fraternidade Farmacêutica",
+      "curso": "Formação em Interpretação de Exames Laboratoriais",
+      "local": "Igarapé - MG",
+      "periodo": "2025 · 10 h/a"
+    },
+    {
+      "tipo": "Graduação",
+      "instituicao": "Universidade Católica de Brasília – UCB",
+      "curso": "Tecnólogo em Desenvolvimento Web",
+      "local": "Brasília - DF",
+      "periodo": "Jan/2025 a Dez/2026 · Em andamento"
+    }
+  ],
   "dadosPessoais": {
     "nome": "Wander Pires Silva Coelho",
-    "nascimento": "20 de maio de 1979",
     "naturalidade": "São Paulo - SP",
     "endereco": "Av. Valdecir Rodrigues de Albuquerque",
     "cidade": "Curimatá",
@@ -20,7 +329,6 @@
   },
   "camposLabels": {
     "nome": "Nome Completo",
-    "nascimento": "Data de Nascimento",
     "naturalidade": "Naturalidade",
     "endereco": "Endereço",
     "cidade": "Cidade",
@@ -30,87 +338,32 @@
     "profissao": "Profissão",
     "cargo": "Cargo Atual"
   },
-  "projetos": [
-    {
-      "titulo": "Portfólio Pessoal",
-      "descricao": "Meu portfólio profissional com HTML5, CSS3 e JavaScript puro — layout responsivo, partículas animadas e renderização dinâmica.",
-      "tecnologias": ["HTML5", "CSS3", "JavaScript"],
-      "link": "#",
-      "emoji": "🌐",
-      "imgZoom": 1
-    },
-    {
-      "titulo": "Gerenciador de Bibliotecas",
-      "descricao": "Controle Escolar Inteligente - Gerenciamento de Biblioteca",
-      "tecnologias": ["React 19", "Material UI", "Supabase", "Express.js", "Node.js"],
-      "link": "https://cei-sistema-biblioteca.surge.sh",
-      "emoji": "img/projeto-1.jpg",
-      "imgZoom": 0.3
-    },
-    {
-      "titulo": "EduSync-PRO",
-      "descricao": "Sistema Criador de Horário de Aula Escolar profissional, com gerador de horário emergencial, frequência de professores, calendário escolar e painel eletrônico.",
-      "tecnologias": ["React 19", "Material UI", "Supabase", "Express.js", "Node.js"],
-      "link": "https://criador-horario-aula.surge.sh/#/login",
-      "emoji": "img/projeto-2.jpg",
-      "imgZoom": 0.3
-    },
-    {
-      "titulo": "Anamnese Integrativa",
-      "descricao": "Sistema completo de apoio ao terapeuta com indicações suplementares e fitoterápicas, acompanhamento em anamnese e tratamentos terapêuticos.",
-      "tecnologias": ["React 19", "Material UI", "Supabase", "Express.js", "Node.js"],
-      "link": "https://anamneseintegrativa.surge.sh/",
-      "emoji": "img/projeto-3.jpg",
-      "imgZoom": 0.3
-    },
-    {
-      "titulo": "Gerador de Certificados",
-      "descricao": "Facilitador para gestão escolar que gera certificados editáveis em massa, acompanhado pelo Histórico Escolar do Estudante.",
-      "tecnologias": ["React 19", "Material UI", "Supabase", "Express.js", "Node.js"],
-      "link": "https://gerador-certificados.surge.sh/login.html",
-      "emoji": "img/projeto-4.jpg",
-      "imgZoom": 0.3
-    }
+  "sobreParagrafos": [
+    "Olá! Meu nome é <strong>Wander Pires Silva Coelho</strong>, nasci em <strong> São Paulo - SP</strong>. Sou educador, naturopata e estudante de programação web. Atuo como Diretor Escolar do CETI Desembargador Amaral em Curimatá-PI desde 2010 e sou professor efetivo das redes municipal e estadual de educação do Piauí.",
+    "Este portfólio foi construído com <strong>React</strong>, demonstrando componentização, renderização dinâmica de dados e boas práticas de desenvolvimento web moderno."
   ],
-  "formacoes": [
-    { "tipo": "Ensino Médio", "instituicao": "Escola Estadual Dr. \"Mariano da Rocha\"", "curso": "Ensino Médio Completo", "local": "Teixeiras - MG", "periodo": "Concluído" },
-    { "tipo": "Graduação", "instituicao": "Universidade Estadual do Piauí – UESPI", "curso": "Licenciatura Plena em Letras / Inglês", "local": "Teresina - PI", "periodo": "Jan/2001 a Dez/2004 · 2.220 h/a" },
-    { "tipo": "Experiência Profissional", "instituicao": "Rede Municipal de Educação de Curimatá - PI", "curso": "Professor Efetivo", "local": "Curimatá - PI", "periodo": "Desde Fev/2006" },
-    { "tipo": "Experiência Profissional", "instituicao": "Rede Estadual de Educação do Estado do Piauí", "curso": "Professor Efetivo", "local": "Piauí", "periodo": "Desde Fev/2006" },
-    { "tipo": "Pós-Graduação", "instituicao": "Instituto Superior de Teologia Aplicada", "curso": "Especialização em Metodologia do Ensino Língua Inglesa", "local": "Sobral - CE", "periodo": "Jan/2007 a Jul/2008 · 360 h/a" },
-    { "tipo": "Pós-Graduação", "instituicao": "Universidade Estadual do Piauí – UESPI", "curso": "Especialização em Educação: Pedagogia do Ensino Fundamental e Médio", "local": "Teresina - PI", "periodo": "Jan/2007 a Fev/2008 · 400 h/a" },
-    { "tipo": "Pós-Graduação", "instituicao": "Faculdade Latino-Americana de Educação – FLATED", "curso": "Especialização em Gestão Escolar com Habilitação em Supervisão Escolar", "local": "Fortaleza - CE", "periodo": "Mar/2009 a Jul/2010 · 390 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Portal Educação", "curso": "Gestão Escolar", "local": "São Paulo - SP", "periodo": "Jan/2010 · 60 h/a" },
-    { "tipo": "Experiência Profissional", "instituicao": "CETI Desembargador Amaral", "curso": "Diretor Escolar", "local": "Curimatá - PI", "periodo": "Desde Jan/2010" },
-    { "tipo": "Curso Livre", "instituicao": "Universidade de Brasília", "curso": "Prevenção do Uso de Drogas para Educadores de Escolas Públicas", "local": "Brasília - DF", "periodo": "Ago/2012 a Abr/2013 · 180 h/a" },
-    { "tipo": "Curso Técnico", "instituicao": "SAM Cursos, Treinamento, Serviços e Comércio", "curso": "Eletricista de Rede, Alta e Baixa Tensão", "local": "Curimatá - PI", "periodo": "Abr/2016 a Mai/2016 · 120 h/a" },
-    { "tipo": "Curso Técnico", "instituicao": "SAM Cursos, Treinamento, Serviços e Comércio", "curso": "NR10 – Complementar - SEP", "local": "Curimatá - PI", "periodo": "Mai/2016 · 40 h/a" },
-    { "tipo": "Curso Técnico", "instituicao": "SAM Cursos, Treinamento, Serviços e Comércio", "curso": "NR35 – Trabalho em Altura", "local": "Curimatá - PI", "periodo": "Mai/2016 · 8 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Portal Educação", "curso": "Introdução à Rede de Computadores", "local": "São Paulo - SP", "periodo": "2016 · 80 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Portal Educação", "curso": "Educação Infantil", "local": "São Paulo - SP", "periodo": "Abr/2016 a Jun/2016 · 60 h/a" },
-    { "tipo": "Graduação", "instituicao": "Universidade Estadual do Piauí – UESPI", "curso": "Licenciatura Plena em Pedagogia", "local": "Teresina - PI", "periodo": "2018 · 1.455 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "SEDUC – 15ª GRE", "curso": "A Lei Maria da Penha nas Escolas: Desconstruindo a Violência", "local": "Corrente - PI", "periodo": "Ago/2018 · 10 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Secretaria da Educação e Cultura do Piauí – SEDUC", "curso": "Formação de Gestores Escolares", "local": "Teresina - PI", "periodo": "Out/2023 · 40 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Instituto Viva Melhor", "curso": "Naturopatia Integrativa e Iridologia", "local": "Campinas - SP", "periodo": "Fev/2024 a Jun/2024 · 600 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "ABRATH", "curso": "Congresso Luso-brasileiro de Práticas Naturais e Integrativas", "local": "Fortaleza - CE", "periodo": "2024 · 48 h/a" },
-    { "tipo": "Pós-Graduação", "instituicao": "UniBF – Centro Universitário", "curso": "Naturopatia com Ênfase em Medicina Integrativa (Lato Sensu)", "local": "Paraíso do Norte - PR", "periodo": "Jun/2024 a Out/2025 · 1.240 h/a" },
-    { "tipo": "Pós-Graduação", "instituicao": "Instituto Viva Melhor", "curso": "Naturopatia Integrativa e Iridologia", "local": "Campinas - SP", "periodo": "Jun/2024 a Jul/2025 · 1.240 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Universidade Online de Viçosa", "curso": "Capacitação de Manipulador de Medicamentos", "local": "Viçosa - MG", "periodo": "Jun/2024 · 60 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Faculdade UNIFTB - VENES", "curso": "Farmacologia Clínica e Terapêutica e Boas Práticas de Prescrição", "local": "Juazeiro do Norte - CE", "periodo": "Out/2024 a Nov/2024 · 40 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Faculdade UNIFTB - VENES", "curso": "Noções de Primeiros Socorros", "local": "Juazeiro do Norte - CE", "periodo": "Out/2024 a Nov/2024 · 180 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Faculdade UNIFTB - VENES", "curso": "Farmacoterapia e Atenção Farmacêutica", "local": "Juazeiro do Norte - CE", "periodo": "Out/2024 a Nov/2024 · 180 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Instituto Emmanoel Fernandes (IEF)", "curso": "Biorressonância Magnética na Prática", "local": "Florianópolis - SC", "periodo": "Out/2024 · 30 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Instituto Emmanoel Fernandes (IEF)", "curso": "Soroterapia Ortomolecular", "local": "Florianópolis - SC", "periodo": "Out/2024 · 30 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Go Kursos – Inovações Educacionais LTDA", "curso": "Conexão EAD: Nivelamento em Português", "local": "", "periodo": "Jan/2025 · 10 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Projeto Plátano - UNIQUANTI", "curso": "Atualização em Iridologia Moderna com John Andrews", "local": "Inglaterra", "periodo": "Abr/2025 · 20 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "ABRATH", "curso": "Formação em Fitoterapia e Plantas Medicinais – Terapeuta em Fitoterapia Integrativa", "local": "Fortaleza - CE", "periodo": "2025 · 600 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Fraternidade Farmacêutica", "curso": "Formação em Farmácia Integrativa", "local": "Igarapé - MG", "periodo": "2025 · 100 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Fundação Getúlio Vargas - FGV", "curso": "Gestão Escolar na Prática: Dimensão Político-Institucional", "local": "Rio de Janeiro - RJ", "periodo": "2025 · 48 h/a" },
-    { "tipo": "Curso Livre", "instituicao": "Fraternidade Farmacêutica", "curso": "Formação em Interpretação de Exames Laboratoriais", "local": "Igarapé - MG", "periodo": "2025 · 10 h/a" },
-    { "tipo": "Graduação", "instituicao": "Universidade Católica de Brasília – UCB", "curso": "Tecnólogo em Desenvolvimento Web", "local": "Brasília - DF", "periodo": "Jan/2025 a Dez/2026 · Em andamento" }
+  "habilidades": [
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "Node.js",
+    "Supabase",
+    "Material UI",
+    "Git & GitHub"
   ],
   "contatos": [
-    { "tipo": "email", "label": "E-mail", "valor": "wanderpsc@gmail.com" },
-    { "tipo": "whatsapp", "label": "WhatsApp", "valor": "(89) 9 8139 8723" }
-  ]
+    {
+      "tipo": "email",
+      "label": "E-mail",
+      "valor": "wanderpsc@gmail.com"
+    },
+    {
+      "tipo": "whatsapp",
+      "label": "WhatsApp",
+      "valor": "(89) 9 8139 8723"
+    }
+  ],
+  "fotoUrl": "/img/Wander.jpeg",
+  "fotoZoom": 1
 }

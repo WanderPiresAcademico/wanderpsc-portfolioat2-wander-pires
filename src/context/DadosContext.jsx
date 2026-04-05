@@ -76,16 +76,54 @@ export function DadosProvider({ children }) {
     }));
   }, []);
 
-  const publicar = useCallback(() => {
-    const blob = new Blob([JSON.stringify(dados, null, 2)], { type: "application/json" });
-    const a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "dados.json";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(a.href);
-    alert("dados.json baixado!\\nSubstitua na pasta public/ e faça push para o GitHub.\\nA Vercel publicará automaticamente.");
+  const publicar = useCallback(async () => {
+    const REPO = "WanderPiresAcademico/wanderpsc-portfolioat2-wander-pires";
+    const PATH = "public/dados.json";
+    let token = localStorage.getItem("github_token");
+
+    if (!token) {
+      token = prompt("Cole seu GitHub Personal Access Token (precisa de permissão 'repo').\nSerá salvo localmente para publicações futuras:");
+      if (!token) return;
+      localStorage.setItem("github_token", token.trim());
+      token = token.trim();
+    }
+
+    try {
+      // Buscar SHA atual do arquivo
+      const getResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${PATH}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      if (!getResp.ok) throw new Error("Falha ao acessar repositório. Verifique o token.");
+      const fileData = await getResp.json();
+
+      // Enviar atualização
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(dados, null, 2))));
+      const putResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${PATH}`, {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: "Atualizar dados.json via portfólio",
+          content,
+          sha: fileData.sha,
+        }),
+      });
+
+      if (!putResp.ok) {
+        const err = await putResp.json();
+        if (putResp.status === 401 || putResp.status === 403) {
+          localStorage.removeItem("github_token");
+          throw new Error("Token inválido ou expirado. Tente publicar novamente.");
+        }
+        throw new Error(err.message || "Erro ao publicar");
+      }
+
+      alert("✅ Publicado com sucesso!\nO Vercel irá atualizar automaticamente em ~1 minuto.\nTodos os dispositivos verão as alterações.");
+    } catch (e) {
+      alert("❌ Erro: " + e.message);
+    }
   }, [dados]);
 
   // ── CRUD Projetos ──

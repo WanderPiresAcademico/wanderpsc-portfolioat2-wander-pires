@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { DadosProvider } from "./context/DadosContext";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -9,17 +10,19 @@ import Contato from "./components/Contato";
 import EditBar from "./components/EditBar";
 
 function App() {
+  const [abaAtiva, setAbaAtiva] = useState("sobre");
+
   return (
     <DadosProvider>
-      <Header />
+      <Header abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
       <Hero />
       <main>
-        <SobreMim />
-        <DadosPessoais />
-        <Formacao />
-        <Projetos />
+        {abaAtiva === "sobre" && <SobreMim />}
+        {abaAtiva === "dados" && <DadosPessoais />}
+        {abaAtiva === "formacao" && <Formacao />}
+        {abaAtiva === "projetos" && <Projetos />}
+        {abaAtiva === "contato" && <Contato />}
       </main>
-      <Contato />
       <EditBar />
     </DadosProvider>
   );

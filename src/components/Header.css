@@ -18,17 +18,21 @@
 .header__links {
   display: flex; gap: 2rem; list-style: none; margin: 0; padding: 0;
 }
-.header__links a {
+.header__tab-btn {
+  background: none; border: none; cursor: pointer;
   color: var(--texto-medio); font-weight: 500; font-size: 0.95rem;
-  position: relative; transition: color 0.3s; text-decoration: none;
+  position: relative; transition: color 0.3s; font-family: inherit;
+  padding: 0.2rem 0;
 }
-.header__links a::after {
+.header__tab-btn::after {
   content: ""; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
   background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
   transition: width 0.3s;
 }
-.header__links a:hover { color: #fff; }
-.header__links a:hover::after { width: 100%; }
+.header__tab-btn:hover { color: #fff; }
+.header__tab-btn:hover::after { width: 100%; }
+.header__tab-btn.aba-ativa { color: #fff; }
+.header__tab-btn.aba-ativa::after { width: 100%; }
 
 .header__menu-btn {
   display: none; flex-direction: column; gap: 5px;

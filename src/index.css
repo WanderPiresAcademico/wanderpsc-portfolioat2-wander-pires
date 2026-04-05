@@ -45,6 +45,15 @@ img { max-width: 100%; display: block; }
 }
 .tag:hover { background: rgba(0, 212, 255, 0.1); border-color: var(--cor-primaria); }
 
+/* Animação de entrada das abas */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+main > * {
+  animation: fadeIn 0.5s ease forwards;
+}
+
 /* Responsividade global */
 @media (max-width: 768px) {
   .secao__titulo { font-size: 1.6rem; margin-bottom: 2rem; }

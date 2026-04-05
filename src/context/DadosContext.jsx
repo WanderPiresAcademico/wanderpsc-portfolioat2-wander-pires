@@ -81,22 +81,50 @@ export function DadosProvider({ children }) {
     const PATH = "public/dados.json";
     let token = localStorage.getItem("github_token");
 
+    // Opção de resetar token ou usar download local
+    const escolha = token
+      ? prompt("Publicar alterações:\n\n1 - Publicar no GitHub (token salvo)\n2 - Trocar token do GitHub\n3 - Baixar dados.json (manual)\n\nDigite 1, 2 ou 3:")
+      : prompt("Como deseja publicar?\n\n1 - Publicar no GitHub (precisa de token)\n2 - Baixar dados.json (manual)\n\nDigite 1 ou 2:");
+
+    if (!escolha) return;
+
+    // Download manual
+    if ((!token && escolha.trim() === "2") || (token && escolha.trim() === "3")) {
+      const blob = new Blob([JSON.stringify(dados, null, 2)], { type: "application/json" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = "dados.json";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(a.href);
+      alert("dados.json baixado!\nSubstitua na pasta public/ e faça push para o GitHub.");
+      return;
+    }
+
+    // Trocar token
+    if (token && escolha.trim() === "2") {
+      localStorage.removeItem("github_token");
+      token = null;
+    }
+
     if (!token) {
-      token = prompt("Cole seu GitHub Personal Access Token (precisa de permissão 'repo').\nSerá salvo localmente para publicações futuras:");
+      token = prompt("Cole seu GitHub Fine-grained Token:\n\nPara criar: github.com > Settings > Developer settings >\nPersonal access tokens > Fine-grained tokens > Generate new token\n\nPermissão necessária: Contents (Read and write)\nRepositório: wanderpsc-portfolioat2-wander-pires");
       if (!token) return;
       localStorage.setItem("github_token", token.trim());
       token = token.trim();
     }
 
     try {
-      // Buscar SHA atual do arquivo
       const getResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${PATH}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
-      if (!getResp.ok) throw new Error("Falha ao acessar repositório. Verifique o token.");
+      if (!getResp.ok) {
+        localStorage.removeItem("github_token");
+        throw new Error("Token inválido ou sem permissão. Tente publicar novamente com um novo token.");
+      }
       const fileData = await getResp.json();
 
-      // Enviar atualização
       const content = btoa(unescape(encodeURIComponent(JSON.stringify(dados, null, 2))));
       const putResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${PATH}`, {
         method: "PUT",
@@ -112,17 +140,14 @@ export function DadosProvider({ children }) {
       });
 
       if (!putResp.ok) {
+        localStorage.removeItem("github_token");
         const err = await putResp.json();
-        if (putResp.status === 401 || putResp.status === 403) {
-          localStorage.removeItem("github_token");
-          throw new Error("Token inválido ou expirado. Tente publicar novamente.");
-        }
-        throw new Error(err.message || "Erro ao publicar");
+        throw new Error(err.message || "Erro ao publicar. Token removido, tente novamente.");
       }
 
-      alert("✅ Publicado com sucesso!\nO Vercel irá atualizar automaticamente em ~1 minuto.\nTodos os dispositivos verão as alterações.");
+      alert("✅ Publicado com sucesso!\nA Vercel irá atualizar em ~1 minuto.\nTodos os dispositivos verão as alterações.");
     } catch (e) {
-      alert("❌ Erro: " + e.message);
+      alert("❌ " + e.message);
     }
   }, [dados]);
 

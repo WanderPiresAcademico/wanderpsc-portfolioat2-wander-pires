@@ -15,7 +15,7 @@ function App() {
   return (
     <DadosProvider>
       <Header abaAtiva={abaAtiva} setAbaAtiva={setAbaAtiva} />
-      <Hero />
+      {abaAtiva === "sobre" && <Hero />}
       <main>
         {abaAtiva === "sobre" && <SobreMim />}
         {abaAtiva === "dados" && <DadosPessoais />}

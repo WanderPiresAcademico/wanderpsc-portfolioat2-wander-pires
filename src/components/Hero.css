@@ -8,7 +8,7 @@
   text-transform: uppercase; letter-spacing: 4px; margin-bottom: 0.5rem;
 }
 .hero__nome {
-  font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 800;
+  font-size: clamp(1.3rem, 3.5vw, 2rem); font-weight: 800;
   background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
   background-clip: text; line-height: 1.1; margin-bottom: 1rem;

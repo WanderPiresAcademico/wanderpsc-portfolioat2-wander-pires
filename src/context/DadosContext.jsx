@@ -26,15 +26,29 @@ export function DadosProvider({ children }) {
   useEffect(() => {
     async function carregar() {
       let base = { ...DEFAULTS };
+      let serverVersion = 0;
       try {
-        const r = await fetch("/dados.json");
-        if (r.ok) { const j = await r.json(); base = { ...DEFAULTS, ...j }; }
+        const r = await fetch("/dados.json?t=" + Date.now());
+        if (r.ok) {
+          const j = await r.json();
+          base = { ...DEFAULTS, ...j };
+          serverVersion = j._version || 0;
+        }
       } catch (_) {}
 
-      // Sempre restaurar dados salvos do localStorage (independente do modo edição)
+      // Só usar localStorage se a versão local >= versão do servidor
       const saved = localStorage.getItem("portfolio_dados_all");
       if (saved) {
-        try { base = { ...base, ...JSON.parse(saved) }; } catch (_) {}
+        try {
+          const local = JSON.parse(saved);
+          const localVersion = local._version || 0;
+          if (localVersion >= serverVersion) {
+            base = { ...base, ...local };
+          } else {
+            // Servidor tem versão mais nova (foi publicado de outro dispositivo)
+            localStorage.removeItem("portfolio_dados_all");
+          }
+        } catch (_) {}
       }
 
       const editMode = localStorage.getItem("portfolio_modo_edicao") === "true";
@@ -125,7 +139,9 @@ export function DadosProvider({ children }) {
       }
       const fileData = await getResp.json();
 
-      const content = btoa(unescape(encodeURIComponent(JSON.stringify(dados, null, 2))));
+      // Adicionar versão para sincronização entre dispositivos
+      const dadosPublicar = { ...dados, _version: Date.now() };
+      const content = btoa(unescape(encodeURIComponent(JSON.stringify(dadosPublicar, null, 2))));
       const putResp = await fetch(`https://api.github.com/repos/${REPO}/contents/${PATH}`, {
         method: "PUT",
         headers: {
@@ -144,6 +160,10 @@ export function DadosProvider({ children }) {
         const err = await putResp.json();
         throw new Error(err.message || "Erro ao publicar. Token removido, tente novamente.");
       }
+
+      // Atualizar localStorage com a versão publicada
+      setDados(dadosPublicar);
+      localStorage.setItem("portfolio_dados_all", JSON.stringify(dadosPublicar));
 
       alert("✅ Publicado com sucesso!\nA Vercel irá atualizar em ~1 minuto.\nTodos os dispositivos verão as alterações.");
     } catch (e) {

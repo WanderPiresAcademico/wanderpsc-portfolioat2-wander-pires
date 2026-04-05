@@ -50,6 +50,38 @@
 }
 .dados__input:focus { outline: none; border-color: var(--cor-primaria); }
 
+.dados__edit-row {
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.dados__edit-row .dados__input { flex: 1; }
+.dados__btn-excluir {
+  background: rgba(255, 60, 60, 0.15); border: 1px solid rgba(255, 60, 60, 0.3);
+  border-radius: 8px; padding: 0.45rem 0.6rem; cursor: pointer;
+  font-size: 0.9rem; transition: all 0.3s; line-height: 1;
+}
+.dados__btn-excluir:hover {
+  background: rgba(255, 60, 60, 0.4); border-color: rgba(255, 60, 60, 0.6);
+}
+
+.dados__novo-campo {
+  margin-top: 1.5rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--borda-glass);
+}
+.dados__novo-titulo {
+  font-size: 0.9rem; color: var(--cor-primaria); margin-bottom: 0.8rem; font-weight: 600;
+}
+.dados__novo-row {
+  display: flex; gap: 0.5rem; flex-wrap: wrap; align-items: center;
+}
+.dados__novo-row .dados__input { flex: 1; min-width: 150px; }
+.dados__btn-adicionar {
+  padding: 0.55rem 1.3rem; border-radius: 50px; border: none;
+  background: linear-gradient(135deg, var(--cor-primaria), var(--cor-secundaria));
+  color: #fff; font-size: 0.85rem; font-weight: 600; cursor: pointer;
+  white-space: nowrap; transition: opacity 0.3s;
+}
+.dados__btn-adicionar:hover { opacity: 0.85; }
+
 @media (max-width: 600px) {
   .dados__card { padding: 1.5rem; }
   .dados__grid { grid-template-columns: 1fr; }

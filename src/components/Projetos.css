@@ -1,4 +1,4 @@
-.projetos { padding: 6rem 0; position: relative; z-index: 1; }
+.projetos { padding: 2rem 0; position: relative; z-index: 1; }
 .projetos__grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem; margin-bottom: 2rem;

@@ -28,7 +28,7 @@ img { max-width: 100%; display: block; }
 
 .secao__titulo {
   text-align: center; font-size: 2.2rem; font-weight: 800;
-  margin-bottom: 3rem; position: relative; color: #fff;
+  margin-bottom: 1.5rem; position: relative; color: #fff;
 }
 .secao__titulo::after {
   content: ''; display: block; width: 60px; height: 4px;

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { useDados } from "../context/DadosContext";
 import "./Header.css";
 
 const abas = [
@@ -11,16 +12,42 @@ const abas = [
 
 function Header({ abaAtiva, setAbaAtiva }) {
   const [menuAberto, setMenuAberto] = useState(false);
+  const { modoEdicao, setModoEdicao } = useDados();
+  const tapCount = useRef(0);
+  const tapTimer = useRef(null);
 
   function selecionarAba(id) {
     setAbaAtiva(id);
     setMenuAberto(false);
   }
 
+  function handleLogoClick(e) {
+    e.preventDefault();
+    tapCount.current++;
+    if (tapCount.current === 1) {
+      tapTimer.current = setTimeout(() => {
+        // Toque simples: ir para Sobre
+        if (tapCount.current < 3) selecionarAba("sobre");
+        tapCount.current = 0;
+      }, 500);
+    }
+    if (tapCount.current >= 3) {
+      clearTimeout(tapTimer.current);
+      tapCount.current = 0;
+      setModoEdicao((prev) => {
+        const novo = !prev;
+        localStorage.setItem("portfolio_modo_edicao", String(novo));
+        return novo;
+      });
+    }
+  }
+
   return (
     <header className="header">
       <div className="header__container">
-        <a href="#" className="header__logo" onClick={() => selecionarAba("sobre")}>Wander Pires</a>
+        <a href="#" className={`header__logo ${modoEdicao ? "header__logo--edit" : ""}`} onClick={handleLogoClick}>
+          Wander Pires {modoEdicao && "✏️"}
+        </a>
         <nav>
           <button
             className={`header__menu-btn ${menuAberto ? "ativo" : ""}`}

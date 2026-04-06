@@ -339,7 +339,7 @@
     "cargo": "Cargo Atual"
   },
   "sobreParagrafos": [
-    "Olá! Meu nome é <strong>Wander Pires Silva Coelho</strong>, nasci em <strong> São Paulo - SP</strong>. Sou educador, naturopata e estudante de programação web. Atuo como Diretor Escolar do CETI Desembargador Amaral em Curimatá-PI desde 2010 e sou professor efetivo das redes municipal e estadual de educação do Piauí.",
+    "Olá! Meu nome é Wander Pires Silva Coelho, nasci em São Paulo - SP, vivi em Teixeiras - MG até os 21 anos de idade. Resido em Curimatá - PI desde o ano de 2001, onde sou Educador, Naturopata, Estudante de Programação Web e Biomedicina. Nesta cidade também atuo como Diretor Escolar do C.E.T.I. Desembargador Amaral desde o ano de 2010, fui diretor presidente da Cooperativa Educacional Bêth Shânã por 6 anos antes de ser diretor deste C.E.T.I., sou professor efetivo das redes municipal e estadual de educação do Piauí.\r\n\r\nEste portfólio foi construído com HTML5, CSS3 e JavaScript, demonstrando",
     "Este portfólio foi construído com <strong>React</strong>, demonstrando componentização, renderização dinâmica de dados e boas práticas de desenvolvimento web moderno."
   ],
   "habilidades": [
@@ -366,5 +366,5 @@
   ],
   "fotoUrl": "/img/Wander.jpeg",
   "fotoZoom": 1,
-  "_version": 1775438885543
+  "_version": 1775439935828
 }

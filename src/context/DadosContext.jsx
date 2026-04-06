@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from "react";
 
 const DadosContext = createContext(null);
 
@@ -17,24 +17,37 @@ const DEFAULTS = {
   fotoUrl: "/img/Wander.jpeg", fotoZoom: 1,
 };
 
+// Intervalo de auto-sync com o servidor (30 segundos)
+const SYNC_INTERVAL = 30 * 1000;
+
 export function DadosProvider({ children }) {
   const [dados, setDados] = useState(DEFAULTS);
   const [modoEdicao, setModoEdicao] = useState(false);
   const [carregado, setCarregado] = useState(false);
+  const versionRef = useRef(0);
+
+  // ── Busca dados do servidor ──
+  async function fetchServerData() {
+    try {
+      const r = await fetch("/dados.json?t=" + Date.now(), {
+        cache: "no-store",
+        headers: { "Cache-Control": "no-cache" },
+      });
+      if (r.ok) return await r.json();
+    } catch (_) {}
+    return null;
+  }
 
   // ── Carrega dados.json + localStorage override ──
   useEffect(() => {
     async function carregar() {
       let base = { ...DEFAULTS };
       let serverVersion = 0;
-      try {
-        const r = await fetch("/dados.json?t=" + Date.now());
-        if (r.ok) {
-          const j = await r.json();
-          base = { ...DEFAULTS, ...j };
-          serverVersion = j._version || 0;
-        }
-      } catch (_) {}
+      const serverData = await fetchServerData();
+      if (serverData) {
+        base = { ...DEFAULTS, ...serverData };
+        serverVersion = serverData._version || 0;
+      }
 
       // Só usar localStorage se a versão local >= versão do servidor
       const saved = localStorage.getItem("portfolio_dados_all");
@@ -44,12 +57,15 @@ export function DadosProvider({ children }) {
           const localVersion = local._version || 0;
           if (localVersion >= serverVersion) {
             base = { ...base, ...local };
+            serverVersion = localVersion;
           } else {
             // Servidor tem versão mais nova (foi publicado de outro dispositivo)
             localStorage.removeItem("portfolio_dados_all");
           }
         } catch (_) {}
       }
+
+      versionRef.current = serverVersion;
 
       const editMode = localStorage.getItem("portfolio_modo_edicao") === "true";
       if (editMode) setModoEdicao(true);
@@ -59,6 +75,30 @@ export function DadosProvider({ children }) {
     }
     carregar();
   }, []);
+
+  // ── Auto-sync: verifica servidor a cada 30s para pegar atualizações ──
+  useEffect(() => {
+    if (!carregado) return;
+
+    const interval = setInterval(async () => {
+      // Se está em modo edição, não sobrescrever dados locais
+      if (localStorage.getItem("portfolio_modo_edicao") === "true") return;
+
+      const serverData = await fetchServerData();
+      if (!serverData) return;
+
+      const serverVersion = serverData._version || 0;
+      if (serverVersion > versionRef.current) {
+        // Servidor tem dados mais novos — atualizar tudo
+        versionRef.current = serverVersion;
+        const novos = { ...DEFAULTS, ...serverData };
+        setDados(novos);
+        localStorage.setItem("portfolio_dados_all", JSON.stringify(novos));
+      }
+    }, SYNC_INTERVAL);
+
+    return () => clearInterval(interval);
+  }, [carregado]);
 
   // ── Persiste no localStorage sempre que dados mudam ──
   useEffect(() => {

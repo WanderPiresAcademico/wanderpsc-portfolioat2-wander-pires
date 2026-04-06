@@ -39,7 +39,7 @@
 }
 
 @media (max-width: 600px) {
-  .hero { padding: 3rem 1rem 0.5rem; }
+  .hero { padding: 5rem 1rem 0.5rem; }
   .hero__saudacao { letter-spacing: 2px; font-size: 0.9rem; }
   .hero__subtitulo { font-size: 1rem; }
 }
